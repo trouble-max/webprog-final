@@ -2,7 +2,7 @@
 
 include("config.php");
 
-$query = mysqli_query($mysqli, "SELECT * FROM `product` WHERE `category_id` = $category");
+$query = mysqli_query($mysqli, "SELECT * FROM `category`");
 
 while($row = mysqli_fetch_assoc($query)){
     $result[] = $row;

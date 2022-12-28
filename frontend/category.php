@@ -1,6 +1,12 @@
 <?php
 session_start();
-include("../backend/market_process.php");
+
+if (!isset($_REQUEST["cg"])) {
+    header("location: market.php");
+}
+
+$category = $_REQUEST["cg"];
+include("../backend/category_process.php");
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +40,7 @@ include("../backend/market_process.php");
                     <a class="header-logout" href="./cart.php">Корзина</a>
                 </div>
                 <?php
-                if(isset($_SESSION["login"])) {
+                if (isset($_SESSION["login"])) {
                 ?>
                     <div class="header-far-right">
                         <a class="header-logout" href="../backend/logout_process.php">Выйти</a>
@@ -56,8 +62,8 @@ include("../backend/market_process.php");
                 <?php
                 foreach ($result as $row) {
                 ?>
-                    <a href=<?php echo "./category.php?cg=" . $row["id"] ?> class="page-link circle-link">
-                        <img class="categoty-icon" src= <?php echo "./assets/img/" . $row["img"] . ".png" ?> alt="">
+                    <a href=# class="page-link circle-link">
+                        <img class="categoty-icon" src=<?php echo "./assets/img/" . $row["img"] . ".png" ?> alt="">
                         <span class="page-circle-text"><?php echo $row["name"] ?></span>
                     </a>
                 <?php
@@ -70,7 +76,7 @@ include("../backend/market_process.php");
             <div id="footer-wrapper">
                 <div class="footer-content footer-left">
                     <a href="./index.php">
-                        <img id="header-logo" src="https://cdn.homebank.kz/assets/icons/others/logotype.svg" alt="Homebank Logo">
+                        <img id="header-logo" src="https://cdn.homebank.kz/assets/icons/others/logotype.svg" alt="Halyk Market Logo">
                     </a>
                 </div>
                 <div class="footer-content footer-center">

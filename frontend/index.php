@@ -14,8 +14,8 @@ if (isset($_SESSION["login"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn.homebank.kz/favicon-32x32.png">
     <link rel="stylesheet" href="./assets/style/style.css">
-    <title>Homebank</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Homebank</title>
 </head>
 
 <body>
