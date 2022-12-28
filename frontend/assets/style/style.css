@@ -1,0 +1,322 @@
+@font-face { 
+    font-family: "MuseoSansCyrl500";
+    src: url("../fonts/MuseoSansCyrl500/MuseoSansCyrl500.eot");
+    src: url("../fonts/MuseoSansCyrl500/MuseoSansCyrl500.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MuseoSansCyrl500/MuseoSansCyrl500.woff") format("woff"),
+    url("../fonts/MuseoSansCyrl500/MuseoSansCyrl500.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face { 
+    font-family: "MuseoSansCyrl300";
+    src: url("../fonts/MuseoSansCyrl300/MuseoSansCyrl300.eot");
+    src: url("../fonts/MuseoSansCyrl300/MuseoSansCyrl300.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MuseoSansCyrl300/MuseoSansCyrl300.woff") format("woff"),
+    url("../fonts/MuseoSansCyrl300/MuseoSansCyrl300.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face { 
+    font-family: "MuseoSansCyrl100";
+    src: url("../fonts/MuseoSansCyrl100/MuseoSansCyrl100.eot");
+    src: url("../fonts/MuseoSansCyrl100/MuseoSansCyrl100.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MuseoSansCyrl100/MuseoSansCyrl100.woff") format("woff"),
+    url("../fonts/MuseoSansCyrl100/MuseoSansCyrl100.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 100;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "MuseoSansCyrl300";
+}
+
+h1, h2{
+    font-weight: 100;
+    font-size: 32px;
+    font-family: "MuseoSansCyrl100";
+}
+
+button, select{
+    font-weight: 600;
+    font-size: 16px;
+    color: aliceblue;
+    background-color: #101328;
+    margin: 0 5px 0 5px;
+    padding: 10px 24px;
+    border: rgb(255, 255, 255) solid 1px;
+    cursor: pointer;
+}
+
+select{
+    transition: 1s;
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 9px 13%;
+    background-color: #101328;
+}
+
+#slide-container {
+    min-height: 700px;
+    max-width: 100%;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slide{
+    flex: 1 0 100%;
+    background-image: url(https://cdn.homebank.kz/crm/hb/1/100937-i.jpg);
+    background-repeat: no-repeat;
+}
+
+.logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+/* MAIN CONTENT */
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;  
+}
+
+.content-title{
+    font-weight:100;
+    color: #03034b;
+    font-weight: 100;
+    margin-left: 70px;
+}
+
+.content-review{
+    margin-left: 130px;
+}
+
+
+.first-button{
+    padding: 10px 45px 10px 45px;
+    color: #fff;
+    background-color: #00a9ff;
+    transition: 0.5s;
+}
+
+.first-button:hover{
+    background-color: #52c5ff;
+}
+
+.content-first{
+    height: 600px;
+    display: grid;
+    grid-template-columns: 500px 400px;
+    grid-template-rows: 200px 200px;
+    place-items: center;
+    margin-left: 300px;
+}
+
+.content-payement{
+    display: grid;
+    grid-template-columns: 800px 400px;
+    grid-template-rows: 50px 350px;
+    place-items: center;
+    margin-left: 100px;
+}
+
+.content{
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    font-family: "MuseoSansCyrl100";
+}
+
+.content-button{
+    float: left;
+    padding: 10px 45px 10px 45px;
+    color: #00a9ff;
+    background-color: #fff;
+    border: #00a9ff solid 1px;
+    transition: 0.5s;
+}
+
+.content-button:hover{
+    background-color: #ade1fc;
+}
+
+#payement{
+    float: left;
+    padding: 50px 100px 20px 250px;
+    height: 26px;
+}
+
+#payement-slide{
+    float: right;
+    padding-right: 250px;
+}
+
+.last{
+    max-width: 100%;
+    max-height: 198px;
+    padding: 60px 15px 50px 15px;
+    text-align: center;
+    background-color: #f1f1f1;
+
+}
+
+/* FOOTER */
+footer{
+    height: auto;
+    padding: 40px 0 80px 0;
+    font-family: "MuseoSansCyrl100";
+    font-weight: 100;
+}
+
+.conditions{
+    padding: 0;
+}
+
+.category-link{
+    display: block;
+    margin: 10px 0;
+    color: #00a9ff;
+}
+
+.app{
+    float: left;
+
+}
+
+.button{
+    height: 40px;
+    max-width: 136px;
+    cursor: pointer;
+}
+
+#icon_app-store, #icon_google-play {
+    display: inline-block;
+    text-align: center;
+    background-position: 50%;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+
+#icon_google-play{
+    margin-left: 10px;
+}
+
+.logo-div{
+    align-items: center;
+    padding: 0 5px 0 40px;
+}
+
+.halyk{
+    float: left;
+    width: 174px;
+    height: 58px;
+}
+
+.halyk-copy{
+    max-width: 480px;
+    height: auto;
+    margin-left: 174px;
+}
+
+.footer-content{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* justify-content:space-between; */
+    display: grid;
+    grid-template-columns: 800px 500px;
+    grid-template-rows: 100px 200px;
+    place-items: center;
+}
+
+.footer-content h3{
+    line-height: 3rem;
+}
+
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-family: "MuseoSansCyrl100";
+    font-weight: 100;
+}
+
+.fa{
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #00a9ff;
+}
+
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+    margin: 0 10px;
+}
+
+.socials a{
+    text-decoration: none;
+}
+
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+
+.socials a i{
+    color: #00a9ff;
+}
+
+.footer-bottom{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 20px 120px;
+    border-top: #f1f1f1 solid 1px;
+}
+
+.footer-bottom p{
+    word-spacing: 2px;
+    text-transform: capitalize;
+    font-family: "MuseoSansCyrl100";
+    font-weight: 100;
+}
+
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}

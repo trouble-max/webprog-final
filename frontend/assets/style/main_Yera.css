@@ -1,0 +1,200 @@
+body {
+    /* display: flex;
+    flex-direction: column; */
+    font-family: "Gotham", "Arial", "Helvetica Neue", Helvetica, sans-serif;
+    margin: 0;
+}
+.wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 150vh;
+    scroll-behavior: smooth;
+}
+#header-wrapper, #footer-wrapper {
+    display: flex;
+    padding: 30px 7.5%;
+    align-items: center;
+}
+.login-form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f3;
+}
+.login-form-wrapper {
+    height: 80%;
+    width: 30%;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0px 0px 50px 5px #797979;
+}
+.login-form-input {
+    border: none;
+}
+.register-form-content {
+    display: grid;
+    height: 100%;
+    padding: 0% 7.5%;
+    grid-template-rows: repeat(8, 1fr);
+}
+.login-form-content {
+    display: grid;
+    height: 100%;
+    padding: 0% 7.5%;
+    grid-template-rows: repeat(7, 1fr);
+}
+.login-form-item1 {
+    grid-row: 1 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-form-item2 {
+    grid-row: 3 / 4;
+    border-bottom: 1px solid #DADADA;
+    border-radius: 10px 10px 0px 0px;
+}
+.register-form-item1 {
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-form-item2 {
+    grid-row: 2 / 3;
+    border-bottom: 1px solid #DADADA;
+    border-radius: 10px 10px 0px 0px;
+}
+.register-form-item3 {
+    grid-row: 3 / 4;
+    border-bottom: 1px solid #DADADA;
+}
+.register-form-item30 {
+    grid-row: 4 / 5;
+    border-bottom: 1px solid #DADADA;
+}
+.login-form-item3 {
+    grid-row: 4 / 5;
+    border-top: 1px solid #DADADA;
+    border-radius: 0px 0px 10px 10px;
+}
+.register-form-item4 {
+    grid-row: 5 / 6;
+    border-top: 1px solid #DADADA;
+    border-radius: 0px 0px 10px 10px;
+}
+.login-form-item4 {
+    grid-row: 6 / 7;
+    border-radius: 10px;
+    border: none;
+    background-color: #00a9ff;
+    font-weight: 700;
+    font-size: 18px;
+    color: #FFFFFF;
+    transition: background-color 0.2s;
+}
+.login-form-item4:hover {
+    cursor: pointer;
+    background-color: #016292;
+}
+.register-form-item5 {
+    grid-row: 7 / 8;
+    border-radius: 10px;
+    border: none;
+    background-color: #00a9ff;
+    font-weight: 700;
+    font-size: 18px;
+    color: #FFFFFF; 
+    transition: background-color 0.2s;   
+}
+.register-form-item5:hover {
+    cursor: pointer;
+    background-color: #016292;
+}
+.login-form-item5 {
+    grid-row: 7 / 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-form-item6 {
+    grid-row: 8 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-form-input {
+    font-size: 18px;
+    padding: 1px 7px;
+}
+.login-form-link {
+    color: blue;
+}
+.login-form-link:visited {
+    color: blue ;
+}
+.page-content-wrapper {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+.page-text {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 50px;
+    padding-left: 40px;
+    padding: 2% 0;
+}
+.page-circle-icon {
+    width: 180px;
+}
+.page-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0px 0px 50px 1px #797979;
+    transition: .2s ease-in-out;
+}
+.circle-link {
+    background-color: #00A082FF;
+    border-radius: 100%;
+    width: 22%;
+    aspect-ratio: 1 / 1;
+}
+.rectangle-link {
+    width: 25%;
+    aspect-ratio: 1 / 0.6;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 25px;
+    border-radius: 10px;
+}
+.rectangle-link-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+.page-rectangle-text{
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.rectangle-link:hover {
+    transform: scale(1.05);
+}
+.circle-link:hover {
+    background-color: #00846BFF;
+    transform: scale(1.05);
+}
+.page-circle-text {
+    padding-top: 20px;
+    color: white;
+    font-size: 25px;
+}
