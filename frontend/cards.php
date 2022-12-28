@@ -12,7 +12,7 @@ if (!isset($_SESSION["login"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn.homebank.kz/favicon-32x32.png">
-    <link rel="stylesheet" href="./assets/style/main_bank.css">
+    <link rel="stylesheet" href="./assets/style/cards.css">
     <title>Homebank</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -22,10 +22,10 @@ if (!isset($_SESSION["login"])) {
         <img class="logo" src="https://cdn.homebank.kz/assets/icons/others/logotype.svg" alt="logo">
         <nav>
             <ul class="nav__links">
-                <li><a id="active" href="#">Главная</a></li>
+                <li><a href="./main.php">Главная</a></li>
                 <li><a href="./payements.php">Платежи</a></li>
                 <li><a href="./transfers.php">Переводы</a></li>
-                <li><a href="./cards.php">Продукты</a></li>
+                <li><a id="active" href="#">Продукты</a></li>
                 <li><a href="./services.php">Услуги</a></li>
                 <li><a href="./user.php">User</a></li>
             </ul>
@@ -40,74 +40,11 @@ if (!isset($_SESSION["login"])) {
 
     <div class="main">
         <div class="main-box">
-            <div class="box bonus">
-                <h3 class="box-title">GO! Бонусы</h3>
-                <p>
-                    <h2>0 GO!</h2>
-                    1 GO! = 1 KZT
-                </p>
-            </div>
-
-            <div class="box box-cards">
-                <h3 class="box-title">Карты</h3>
-                <div class="card">
-                    <h2><a href="">Homebank Wallet</a></h2>
-                    <span class="cash">0.00T</span>
-                </div>
-                <div class="card">
-                    <h2><a href="">VISA Мультивалютная</a></h2>
-                    <span class="cash">0.00T</span>
-                </div>
-                <div class="card">
-                    <h2><a href="">VISA</a></h2>
-                    <span class="cash">0.00T</span>
-                </div>
-            </div>
-            
-            <div class="box new-card">
-                <h3 class="box-title">Мои подвязанные карты</h3>
-                <p>
-                    <h2 class="new-cards"><a href="">
-                        <img src="https://cdn.homebank.kz/assets/icons/others/plus.svg" alt="img">
-                        Подвязать карту любого банка РК
-                    </a></h2>
-                    <h2 class="new-cards"><a href="">
-                        <img src="https://cdn.homebank.kz/assets/icons/others/plus.svg" alt="img">
-                        Подвязать корпоративную карту Halyk Bank
-                    </a></h2>
-                </p>
-            </div>
+        
         </div>
         
-        <div class="main-transfer">
-            <div class="box transfer">
-                <h3 class="box-title">Переводы</h3>
-                <p>
-                    <h2 class="">Перевод на карту по мобильному номеру</h2>
-                    <span>0 тг между картами Halyk Bank</span>
-                    <form action="../backend/login_process.php" method="post" class="login-form-content">
-                        <div class="inputBox">
-                            <span>Номер карты</span>
-                            <input class="form-input" type="text" required="required" placeholder="Выберите карту">
-                        </div>
-                        <div class="inputBox">
-                            <span>Номер телефона</span>
-                            <input class="form-input" type="tel" required="required" value="+7">
-                        </div>
-                        <div class="inputBox">
-                            <span>Сумма</span>
-                            <input class="form-input" type="text" name="summ" placeholder="Сумма">
-                        </div>
-                        <div class="inputBox">
-                            <span>Сообщение</span>
-                            <input class="form-input" type="text" name="text" placeholder="">
-                        </div>
-                        <button class="transfer-button" type="submit" name="submit">
-                            Перевести
-                        </button>
-                    </form>
-                </p>
-            </div>
+        <div class="main-box">
+            
         </div>
     </div>
 
