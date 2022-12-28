@@ -4,9 +4,19 @@ session_start();
 if (!isset($_REQUEST["pr"])) {
     header("location: market.php");
 }
+if (!isset($_SESSION["login"])) {
+    header("location: login.php?page=product" . $_REQUEST["pr"]);
+}
 
 $product = $_REQUEST["pr"];
-include("../backend/category_process.php");
+include("../backend/product_process.php");
+include("../backend/review_process.php");
+
+// echo json_encode($reviews);
+
+if (isset($_SESSION['cart'])) {
+    // echo json_encode($_SESSION['cart']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +29,7 @@ include("../backend/category_process.php");
 
     <link rel="icon" href="https://cdn.homebank.kz/favicon-32x32.png">
     <link rel="stylesheet" href="./assets/style/market.css">
+    <link rel="stylesheet" href="./assets/style/product.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Halyk Market</title>
@@ -54,21 +65,72 @@ include("../backend/category_process.php");
         </header>
 
         <div class="page-wrapper">
-            <h1 class="page-text">
-                Категории
-            </h1>
-            <div class="page-content-wrapper">
+            <div class="product-content-wrapper">
 
-                <?php
-                foreach ($result as $row) {
-                ?>
-                    <a href=# class="page-link circle-link">
-                        <img class="categoty-icon" src=<?php echo "./assets/img/" . $row["img"] . ".png" ?> alt="">
-                        <span class="page-circle-text"><?php echo $row["name"] ?></span>
-                    </a>
-                <?php
-                }
-                ?>
+                <div class="image">
+                    <img src=<?php echo "./assets/img/" . $result->img ?> alt="">
+                </div>
+                <div class="details">
+                    <h1 class="details-name"><?php echo $result->name ?></h1>
+                    <h4 class="details-tsena">Цена</h4>
+                    <h2 class="details-price"><?php echo $result->price ?> ₸</h2>
+
+                    <a class="details-button header-logout" href=<?php echo "../backend/add_process.php?pr=" . $result->id ?>>Добавить в корзину</a>
+
+                    <div class="details-score-wrapper">
+                        <?php
+                        if (sizeof($reviews) == 0) {
+                        ?>
+                            <h1 class="details-score">0</h1>
+                            <h3 class="details-no-score">Нет оценок</h3>
+                        <?php
+                        } else {
+                        ?>
+                            <h1 class="details-score"><?php echo $avg_score[0] ?></h1>
+                            <h3 class="details-no-score"><?php echo sizeof($reviews) ?> оценок</h3>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-content-wrapper review-wrapper">
+
+                <div class="review">
+                    <h1 class="details-name">Отзывы</h1>
+
+                    <?php
+                    if (sizeof($reviews) == 0) {
+                    ?>
+                        <h3 class="details-price">Нет отзывов</h3>
+                        <?php
+                    } else {
+                        foreach ($reviews as $row) {
+                        ?>
+                            <h4 class="details-tsena"><span><?php echo $row["author"] ?></span> <?php echo $row["stars"] ?> из 5</h4>
+                            <h3 class="details-price"><?php echo $row["review_body"] ?></h3>
+                    <?php
+                        }
+                    }
+                    ?>
+
+                    <form action=<?php echo "../backend/new_review_process.php?pr=" . $product ?> method="post">
+                        <h4 class="details-tsena" id="review-body"><span>Напишите отзыв</span> 500 символов</h4>
+                        <textarea name="body" id="body" rows="6" wrap="soft" maxlength="500" required></textarea>
+                        <h4 class="details-tsena" id="review-star"><span>Поставьте оценку</span></h4>
+                        <div class="rating">
+                            <input type="radio" name="rating" value="5" id="5" required><label for="5">☆</label>
+                            <input type="radio" name="rating" value="4" id="4" required><label for="4">☆</label>
+                            <input type="radio" name="rating" value="3" id="3" required><label for="3">☆</label>
+                            <input type="radio" name="rating" value="2" id="2" required><label for="2">☆</label>
+                            <input type="radio" name="rating" value="1" id="1" required><label for="1">☆</label>
+                        </div>
+                        <button class="form-button header-logout" name="submit" type="submit">Отправить</button>
+                    </form>
+
+                </div>
+
             </div>
         </div>
 

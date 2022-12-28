@@ -21,7 +21,7 @@ include("../backend/category_process.php");
     <link rel="stylesheet" href="./assets/style/market.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Halyk Market</title>
+    <title>Категория</title>
 </head>
 
 <body>
@@ -55,16 +55,15 @@ include("../backend/category_process.php");
 
         <div class="page-wrapper">
             <h1 class="page-text">
-                Категории
+                <?php echo $name[0] ?>
             </h1>
             <div class="page-content-wrapper">
 
                 <?php
                 foreach ($result as $row) {
                 ?>
-                    <a href=# class="page-link circle-link">
-                        <img class="categoty-icon" src=<?php echo "./assets/img/" . $row["img"] . ".png" ?> alt="">
-                        <span class="page-circle-text"><?php echo $row["name"] ?></span>
+                    <a href=<?php echo "./product.php?pr=" . $row["id"] ?> class="page-link circle-link">
+                        <span class="category-text page-circle-text"><?php echo $row["name"] ?></span>
                     </a>
                 <?php
                 }

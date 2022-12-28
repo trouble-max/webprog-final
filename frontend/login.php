@@ -3,6 +3,12 @@ session_start();
 if (isset($_SESSION["login"])) {
     header("location: main.php");
 }
+
+if (isset($_REQUEST["page"])) {
+    $prev = $_REQUEST["page"];
+} else {
+    $prev = "main";
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,14 +24,13 @@ if (isset($_SESSION["login"])) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/style/main_Yera.css">
 
-    <title>Login Page</title>
+    <title>Логин</title>
 </head>
 
 <body>
     <div class="wrapper">
         <header>
-            <img class="logo" src="https://cdn.homebank.kz/assets/icons/others/logotype.svg" alt="logo">
-            <button class="login"><a href="./login.php">Вход</a></button>
+            <img onclick="location.href = './index.php';" class="logo" src="https://cdn.homebank.kz/assets/icons/others/logotype.svg" alt="logo">
             <select>
                 <option value="RU" selected>Ру</option>
                 <option value="KZ">Ққ</option>
@@ -35,14 +40,14 @@ if (isset($_SESSION["login"])) {
 
         <div class="login-form">
             <div class="login-form-wrapper">
-                <form action="../backend/login_process.php" method="post" class="login-form-content">
+                <form action=<?php echo "../backend/login_process.php?page=" . $prev ?> method="post" class="login-form-content">
                     <div class="login-form-item1">
                         <h2>
                             Вход в homebank
                         </h2>
                     </div>
-                    <input class="login-form-item2 login-form-input" type="email" name="email" class="login-form-input" placeholder="Введите ваш логин">
-                    <input class="login-form-item3 login-form-input" type="password" name="password" class="login-form-input" placeholder="Введите ваш пароль">
+                    <input class="login-form-item2 login-form-input" type="email" name="email" class="login-form-input" placeholder="Введите ваш логин" required>
+                    <input class="login-form-item3 login-form-input" type="password" name="password" class="login-form-input" placeholder="Введите ваш пароль" required>
                     <button class="login-form-item4" type="submit" name="submit">
                         Войти
                     </button>

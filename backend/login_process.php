@@ -4,7 +4,7 @@ session_start();
 include("config.php");
 
 if (isset($_POST["submit"])) {
-    
+
     $email = $_POST["email"];
     $password = $_POST["password"];
 
@@ -13,9 +13,20 @@ if (isset($_POST["submit"])) {
 
     if ($result) {
         $_SESSION["login"] = true;
-        $_SESSION["user_id"] = $result["user_id"];
-        header("location:../frontend/main.php");
+        $_SESSION["user_id"] = $result["id"];
+        $_SESSION["user_name"] = $result["first_name"];
+
+        if (isset($_REQUEST["page"])) {
+            $page = $_REQUEST["page"];
+
+            if (str_contains($page, "product")) {
+                header("location:../frontend/product.php?pr=" . substr($page, -1));
+            }
+            if ($page == "main") {
+                header("location:../frontend/main.php");
+            }
+        } else {
+            header("location:../frontend/main.php");
+        }
     }
 }
-
-?>

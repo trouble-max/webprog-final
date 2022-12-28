@@ -1,8 +1,8 @@
 body {
     /* display: flex;
     flex-direction: column; */
-    font-family: "Gotham", "Arial", "Helvetica Neue", Helvetica, sans-serif;
     margin: 0;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', arial, sans-serif, 'Apple Color Emoji';
 }
 .wrapper {
     display: grid;
@@ -12,7 +12,7 @@ body {
 }
 header {
     height: 104px;
-    background-color: #FFC244FF;
+    background-color: #f6f7f8;
     position: sticky;
     top: 0;
 }
@@ -67,7 +67,7 @@ header {
     font-family: inherit;
     font-size: 18px;
     font-weight: 700;
-    background-color: #00A082FF;
+    background-color: #61799b;
     color: #FFFFFF;
     transition: 0.2s;
 }
@@ -75,13 +75,13 @@ header {
     color: #FFFFFF;
 }
 .header-logout:hover {
-    background-color: #00846BFF;
+    background-color: #476186;
 }
-.button-cart {
+/* .button-cart {
     height: 48px;
     border-radius: 9999px;
     min-width: 138px;
-    background-color: #00A082FF;
+    background-color: #61799b;
     border: none;
     font-weight: 700;
     font-family: inherit;
@@ -91,10 +91,10 @@ header {
 }
 .button-cart:hover {
     cursor: pointer;
-    background-color: #00846BFF;
-}
+    background-color: #61799b;
+} */
 footer {
-    background-color: #1D1D1DFF;
+    background-color: #071222;
     height: 100px;
 }
 .footer-content {
@@ -142,43 +142,23 @@ footer {
     transition: .2s ease-in-out;
 }
 .circle-link {
-    background-color: #00A082FF;
+    background-color: #61799b;
     border-radius: 100%;
     width: 22%;
     aspect-ratio: 1 / 1;
 }
-.rectangle-link {
-    width: 25%;
-    aspect-ratio: 1 / 0.6;
-    color: #FFFFFF;
-    font-weight: 600;
-    font-size: 25px;
-    border-radius: 10px;
-}
-.rectangle-link-background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-}
-.page-rectangle-text{
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-.rectangle-link:hover {
-    transform: scale(1.05);
-}
 .circle-link:hover {
-    background-color: #00846BFF;
+    background-color: #476186;
     transform: scale(1.05);
 }
 .page-circle-text {
     padding-top: 20px;
     color: white;
     font-size: 25px;
+}
+.category-text {
+    text-align: center;
+    padding-top: 0;
 }
 .categoty-icon {
     width: 100px;

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION["login"])) {
-    header("location: index.php");
+    header("location: main.php");
 }
 ?>
 
@@ -18,14 +18,13 @@ if (isset($_SESSION["login"])) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/style/main_Yera.css">
 
-    <title>Register Page</title>
+    <title>Регистрация</title>
 </head>
 
 <body>
     <div class="wrapper">
         <header>
-            <img class="logo" src="https://cdn.homebank.kz/assets/icons/others/logotype.svg" alt="logo">
-            <button class="login"><a href="./login.php">Вход</a></button>
+            <img onclick="location.href = './index.php';" class="logo" src="https://cdn.homebank.kz/assets/icons/others/logotype.svg" alt="logo">
             <select>
                 <option value="RU" selected>Ру</option>
                 <option value="KZ">Ққ</option>
@@ -41,10 +40,10 @@ if (isset($_SESSION["login"])) {
                             Регистрация
                         </h2>
                     </div>
-                    <input class="register-form-item2 login-form-input" type="first" name="first" class="login-form-input" placeholder="Введите имя">
-                    <input class="register-form-item3 login-form-input" type="last" name="last" class="login-form-input" placeholder="Введите фамилию">
-                    <input class="register-form-item30 login-form-input" type="email" name="email" class="login-form-input" placeholder="Введите логин">
-                    <input class="register-form-item4 login-form-input" type="password" name="password" class="login-form-input" placeholder="Введите пароль">
+                    <input class="register-form-item2 login-form-input" type="first" name="first" class="login-form-input" placeholder="Введите имя" required>
+                    <input class="register-form-item3 login-form-input" type="last" name="last" class="login-form-input" placeholder="Введите фамилию" required>
+                    <input class="register-form-item30 login-form-input" type="email" name="email" class="login-form-input" placeholder="Введите логин" required>
+                    <input class="register-form-item4 login-form-input" type="password" name="password" class="login-form-input" placeholder="Введите пароль" required>
                     <button class="register-form-item5" type="submit" name="submit">
                     Зарегистрироваться
                     </button>

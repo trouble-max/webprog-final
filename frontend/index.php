@@ -21,7 +21,7 @@ if (isset($_SESSION["login"])) {
 <body>
     <header>
         <img class="logo" src="https://cdn.homebank.kz/assets/icons/others/logotype.svg" alt="logo">
-        <button class="login"><a href="./login.php">Вход</a></button>
+        <button onclick="location.href = './login.php';" class="login"><a href="./login.php">Вход</a></button>
         <select>
             <option value="RU" selected>Ру</option>
             <option value="KZ">Ққ</option>

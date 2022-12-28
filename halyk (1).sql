@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2022 at 09:22 AM
+-- Generation Time: Dec 28, 2022 at 09:00 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `lol` int(11) DEFAULT NULL,
+  `img` varchar(50) DEFAULT NULL,
   `kek` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -38,10 +38,10 @@ CREATE TABLE `category` (
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`id`, `name`, `lol`, `kek`) VALUES
-(1, 'Телефоны и гаджеты', NULL, NULL),
-(2, 'Аксессуары', NULL, NULL),
-(3, 'Товары для дома и дачи', NULL, NULL);
+INSERT INTO `category` (`id`, `name`, `img`, `kek`) VALUES
+(1, 'Телефоны и гаджеты', 'mobile', NULL),
+(2, 'Фото и видео', 'camera', NULL),
+(3, 'Товары для дома и дачи', 'home', NULL);
 
 -- --------------------------------------------------------
 
@@ -53,8 +53,24 @@ CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
   `price` int(11) NOT NULL,
+  `img` text NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `price`, `img`, `category_id`) VALUES
+(1, 'Смартфон Huawei P50 256Gb Gold', 389990, 'huawei_p50.jpg', 1),
+(2, 'Электронная книга Ritmix RBK-677FL Черная', 48740, 'ritmix_rbk.jpg', 1),
+(3, 'Смартфон Poco M5 6/128Gb Black', 87990, 'poco_m5.jpg', 1),
+(4, 'Фотоаппарат Fujifilm Instax Mini 11 TH EX D Blush Pink', 59990, 'instax_mini11.jpg', 2),
+(5, 'Штатив NiceFoto Magic Arm 11 Articulated Черный', 11990, 'nicefoto_magic_arm.jpg', 2),
+(6, 'Квадрокоптер Syma X5SW Белый', 44990, 'syma_x5sw.jpg', 2),
+(7, 'Набор посуды In House 710M4 4шт', 3600, 'in_house_710m4.jpeg', 3),
+(8, 'Перчатки Nastah ORDAtrade 10 пар Желтые', 9500, 'nastah_ordatrade.jpg', 3),
+(9, 'Полотенце Самойловский Текстиль 761441 50х90 Розовое', 1900, '761441.jpg ', 3);
 
 -- --------------------------------------------------------
 
@@ -63,9 +79,21 @@ CREATE TABLE `product` (
 --
 
 CREATE TABLE `review` (
+  `id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `review_body` text NOT NULL
+  `review_body` text NOT NULL,
+  `stars` int(11) NOT NULL,
+  `author` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`id`, `product_id`, `review_body`, `stars`, `author`) VALUES
+(1, 1, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore vero, exercitationem nesciunt laudantium enim dolores omnis qui cumque ducimus dicta molestias eos, esse iusto doloremque voluptas repudiandae beatae sint. Delectus?', 4, 'Test'),
+(2, 1, 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum provident eaque, illo quia quod impedit quo ex eos obcaecati molestias esse commodi recusandae sint maxime eveniet voluptas perferendis autem cum!', 5, 'Test2'),
+(3, 4, 'Фотоаппарат отлично работает и успешно выполняет свои функции. Он очень удобен и можно легко переключиться в режим селфи. Вспышка не портит кадры, фотографии выходят быстро и качественно. Владелец такой фотокарточки окружен приятными ценными воспоминаниями своей жизни. Дизайн и цвета очень приятные, нет ничего лишнего. Фотоаппарат вообще стал более интуитивным, в Instax его считают самым простым и понятным из всех фотокамер мгновенной печати когда-либо выпущенных японской компанией.', 5, 'Макпал');
 
 -- --------------------------------------------------------
 
@@ -114,7 +142,8 @@ ALTER TABLE `product`
 -- Indexes for table `review`
 --
 ALTER TABLE `review`
-  ADD KEY `product_id` (`product_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `review_ibfk_1` (`product_id`);
 
 --
 -- Indexes for table `user`
@@ -136,7 +165,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -158,7 +193,7 @@ ALTER TABLE `product`
 -- Constraints for table `review`
 --
 ALTER TABLE `review`
-  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
+  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
