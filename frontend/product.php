@@ -44,9 +44,9 @@ if (isset($_SESSION['cart'])) {
                         <img id="header-logo" src="https://halykmarket.kz/_nuxt/30f70ea43b8383d02d9fade5c7f222d7.svg" alt="Halyk Market Logo">
                     </a>
                 </div>
-                <div class="header-center">
-                    <input class="header-search" type="text" placeholder="Поиск...">
-                </div>
+                <form action="../backend/search_process.php" method="post" class="header-center">
+                    <input class="header-search" name="name" type="text" placeholder="Поиск...">
+                </form>
                 <div class="header-right">
                     <a class="header-logout" href="./cart.php">Корзина</a>
                 </div>

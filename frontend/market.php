@@ -27,14 +27,14 @@ include("../backend/market_process.php");
                         <img id="header-logo" src="https://halykmarket.kz/_nuxt/30f70ea43b8383d02d9fade5c7f222d7.svg" alt="Halyk Market Logo">
                     </a>
                 </div>
-                <div class="header-center">
-                    <input class="header-search" type="text" placeholder="Поиск...">
-                </div>
+                <form action="../backend/search_process.php" method="post" class="header-center">
+                    <input class="header-search" name="name" type="text" placeholder="Поиск...">
+                </form>
                 <div class="header-right">
                     <a class="header-logout" href="./cart.php">Корзина</a>
                 </div>
                 <?php
-                if(isset($_SESSION["login"])) {
+                if (isset($_SESSION["login"])) {
                 ?>
                     <div class="header-far-right">
                         <a class="header-logout" href="../backend/logout_process.php">Выйти</a>
@@ -57,7 +57,7 @@ include("../backend/market_process.php");
                 foreach ($result as $row) {
                 ?>
                     <a href=<?php echo "./category.php?cg=" . $row["id"] ?> class="page-link circle-link">
-                        <img class="categoty-icon" src= <?php echo "./assets/img/" . $row["img"] . ".png" ?> alt="">
+                        <img class="categoty-icon" src=<?php echo "./assets/img/" . $row["img"] . ".png" ?> alt="">
                         <span class="page-circle-text"><?php echo $row["name"] ?></span>
                     </a>
                 <?php

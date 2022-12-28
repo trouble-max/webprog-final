@@ -10,7 +10,5 @@ if (!$_SESSION['cart'][$_REQUEST["pr"]]["count"]) {
     $_SESSION['cart'][$_REQUEST["pr"]]["count"]++;
 }
 
-
-// unset($_SESSION['cart']);
 header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

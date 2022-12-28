@@ -94,6 +94,7 @@
     font-weight: normal;
 }
 .form-button {
+    cursor: pointer;
     border: none;
     margin: 10px 0;
 }

@@ -10,8 +10,4 @@ $reviews = array();
 while($row = mysqli_fetch_assoc($query)){
     $reviews[] = $row;
 }
-
-// if (!$reviews) {
-//     header("location:../frontend/error.php?err=no%20result");
-// }
 ?>
