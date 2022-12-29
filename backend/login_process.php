@@ -15,6 +15,7 @@ if (isset($_POST["submit"])) {
         $_SESSION["login"] = true;
         $_SESSION["user_id"] = $result["id"];
         $_SESSION["user_name"] = $result["first_name"];
+        $_SESSION["user_card"] = $result["card_number"];
 
         if (isset($_REQUEST["page"])) {
             $page = $_REQUEST["page"];
@@ -28,5 +29,7 @@ if (isset($_POST["submit"])) {
         } else {
             header("location:../frontend/main.php");
         }
+    } else {
+        header("location:../frontend/error.php?err=incorrect%20values");
     }
 }

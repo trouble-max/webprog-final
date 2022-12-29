@@ -16,6 +16,6 @@ if (isset($_POST["name"])) {
         header("location:../frontend/product.php?pr=" . $result[0]["id"]);
     }
 } else {
-    header("location:../frontend/market.php");
+    header("location:../frontend/error.php?err=no%20result");
 }
 ?>

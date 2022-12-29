@@ -103,7 +103,7 @@ include("../backend/cart_process.php");
                 </div>
                 <div class="pay">
                     <a class="header-logout bad" href="../backend/empty_cart_process.php">Очистить</a>
-                    <a class="header-logout good" href="./cart.php">Оплатить</a>
+                    <a class="header-logout good" href=<?php echo "../backend/pay_cart_process.php?sum=".$sum ?>>Оплатить</a>
                 </div>
             <?php
             }

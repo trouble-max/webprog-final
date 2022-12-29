@@ -14,6 +14,8 @@ if (isset($_POST["submit"])) {
 
     if ($query) {
         header("location:../frontend/login.php");
+    } else {
+        header("location:../frontend/error.php?err=invalid%20inputs");
     }
 }
 
