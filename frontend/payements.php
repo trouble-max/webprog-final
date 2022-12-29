@@ -49,8 +49,8 @@ if (!isset($_SESSION["login"])) {
                 <h5 class="small-text">Городской телефон</h5>
             </div>
             <div class="box">
-                <img src="./assets/img/payements/house.png" class="box-image">
-                <h5 class="small-text">Коммунальные услуги</h5>
+                <img src="./assets/img/payements/fine.png" class="box-image">
+                <h5 class="small-text">Налоги, штрафы</h5>
             </div>
             <div class="box">
                 <img src="./assets/img/payements/charity.png" class="box-image">
@@ -61,8 +61,8 @@ if (!isset($_SESSION["login"])) {
                 <h5 class="small-text">Охрана</h5>
             </div>
             <div class="box">
-                <img src="./assets/img/payements/fine.png" class="box-image">
-                <h5 class="small-text">Налоги, штрафы</h5>
+                <img src="./assets/img/payements/house.png" class="box-image">
+                <h5 class="small-text">Коммунальные услуги</h5>
             </div>
             <div class="box">
                 <img src="./assets/img/payements/education.png" class="box-image">
@@ -118,22 +118,96 @@ if (!isset($_SESSION["login"])) {
             <div class="modal-box">
                 <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
                 <div id="caption">
-                    Инструкция по входу
+                    Оплата мобильной связи
+                    <div id="caption-guide">
+                        <div class="inputBox">
+                            <span>Номер телефона</span>
+                            <input class="form-input" type="tel" required="required" value="+7">
+                        </div>
+                        <div class="inputBox">
+                            <span>Сумма</span>
+                            <input class="form-input" type="text" name="summ" placeholder="Сумма">
+                        </div>
+                        <button class="transfer-button" type="submit" name="submit">
+                            Перевести
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-box">
+                <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+                <div id="caption">
+                    Городской телефон
                     <div id="caption-guide">
                         <div class="guide-info">
-                                
+                            <a href="#">
+                                <img src="https://cdn.homebank.kz/assets/logos/services/bazisTelecomByAcc.png" width="50" height="50">
+                                <p>BTcom infocommunications, по счету</p>
+                            </a>
                         </div>
                         <div class="guide-info">
-                                
+                            <a href="#">
+                                <img src="https://cdn.homebank.kz/assets/logos/services/bazisTelecomByAcc.png" width="50" height="50">
+                                <p>BTcom infocommunications, по телефону</p>
+                            </a>
                         </div>
                         <div class="guide-info">
-                                
+                            <a href="#">
+                                <img src="https://cdn.homebank.kz/assets/logos/services/smartnetZaTelefonInternetIKabelnoeTv.png" width="50" height="50">
+                                <p>SMARTNET (за телефон, Интернет и кабельное ТВ)</p>
+                            </a>
                         </div>
                         <div class="guide-info">
-                                
+                            <a href="#">
+                                <img src="https://cdn.homebank.kz/assets/logos/services/bazisTelecomByAcc.png" width="50" height="50">
+                                <p>"Общество Красного Полумесяца Республики Казахстан"</p>
+                            </a>
                         </div>
                         <div class="guide-info">
-                                
+                            <a href="#">
+                                <img src="https://cdn.homebank.kz/assets/logos/services/kazakhtelecom.png" width="50" height="50">
+                                <p>Казахтелеком</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-box">
+                <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+                <div id="caption">
+                    Налоги, Штрафы
+                    <div id="caption-guide">
+                        <div class="guide-info">
+                            <a href="#">
+                                <p>«Оплата за изготовление документов»</p>
+                            </a>
+                        </div>
+                        <div class="guide-info">
+                            <a href="#">
+                                <p>НАО Государственная корпорация "Правительство для граждан"</p>
+                            </a>
+                        </div>
+                        <div class="guide-info">
+                            <a href="#">
+                                <img src="https://cdn.homebank.kz/assets/logos/services/unifiedTaxes.png" width="50" height="50">
+                                <p>Оплата налоговой задолженности (транспорт, земля и имущество )</p>
+                            </a>
+                        </div>
+                        <div class="guide-info">
+                            <a href="#">
+                                <img src="https://cdn.homebank.kz/assets/logos/services/unifiedTaxes.png" width="50" height="50">
+                                <p>Оплата предстоящих налогов (транспорт, земля и имущество)</p>
+                            </a>
+                        </div>
+                        <div class="guide-info">
+                            <a href="#">
+                                <img src="https://cdn.homebank.kz/assets/logos/services/unifiedTaxes.png" width="50" height="50">
+                                <p>Оплата Налогов по реквизитам</p>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -42,23 +42,15 @@ if (!isset($_SESSION["login"])) {
         <div class="main-box">
             <div class="box bonus">
                 <h3 class="box-title">GO! Бонусы</h3>
-                <p>
-                    <h2>0 GO!</h2>
-                    1 GO! = 1 KZT
-                </p>
+                <div class="card card-bonus">
+                    <span class="bonus">0 GO!</span>
+                    <h2>1 GO! = 1 KZT</h2>
+                </div>
             </div>
 
             <div class="box box-cards">
-                <h3 class="box-title">Карты</h3>
-                <div class="card">
-                    <h2><a href="">Homebank Wallet</a></h2>
-                    <span class="cash">0.00T</span>
-                </div>
-                <div class="card">
-                    <h2><a href="">VISA Мультивалютная</a></h2>
-                    <span class="cash">0.00T</span>
-                </div>
-                <div class="card">
+                <h3 class="box-title">Баланс на карте</h3>
+                <div class="card card-cash">
                     <h2><a href="">VISA</a></h2>
                     <span class="cash">0.00T</span>
                 </div>
@@ -83,20 +75,24 @@ if (!isset($_SESSION["login"])) {
             <div class="box transfer">
                 <h3 class="box-title">Переводы</h3>
                 <p>
-                    <h2 class="">Перевод на карту любого банка</h2>
-                    <span>0 тг между картами Halyk Bank</span>
-                    <form action="../backend/sending_process.php" method="post" class="login-form-content">
-                        <div class="inputBox">
+                    <h2>Перевод на карту по мобильному номеру</h2>
+                    <h2>0 тг между картами Halyk Bank</h2>
+                    <form action="../backend/login_process.php" method="post" class="login-form-content">
+                        <!-- <div class="inputBox">
                             <span>Номер карты</span>
-                            <input class="form-input" name="card" type="text" required="required" placeholder="Выберите карту" maxlength="16" required>
+                            <input class="form-input" type="text" required="required" placeholder="Выберите карту">
+                        </div> -->
+                        <div class="inputBox">
+                            <span>Номер телефона</span>
+                            <input class="form-input" type="tel" required="required" value="+7">
                         </div>
                         <div class="inputBox">
                             <span>Сумма</span>
-                            <input class="form-input" type="text" name="sum" placeholder="Сумма" required>
+                            <input class="form-input" type="text" name="summ" placeholder="Сумма">
                         </div>
                         <div class="inputBox">
                             <span>Сообщение</span>
-                            <input class="form-input" type="text" name="text" placeholder="Сообщение">
+                            <input class="form-input" type="text" name="text" placeholder="">
                         </div>
                         <button class="transfer-button" type="submit" name="submit">
                             Перевести

@@ -108,13 +108,41 @@ header{
     background-color: white;
     padding: 15px;
     margin: 10px;
-    height: auto;
     box-shadow: 0 0 2px 2px rgb(200, 200, 200);
 }
 
 .user-info{
     list-style: none;
     
+}
+
+.row{
+    padding: 20px 0;
+}
+
+.info{
+    float: left;
+    margin-right: 150px;
+}
+
+.user-name{
+    float: right;
+    /* padding: 10px; */
+}
+
+.user-number{
+    float: right;
+    /* padding: 10px; */
+}
+
+.info-edit a{
+    color: white;
+}
+
+.info-edit{
+    float: right;
+    margin: 10px 0;
+    background-color: #00a9ff;
 }
 
 /* FOOTER */

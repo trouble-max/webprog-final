@@ -104,7 +104,7 @@ header{
 }
 
 .box-title{
-    color: #8b8b8b;
+    color: #3b3b3b;
 }
 
 .box{
@@ -125,11 +125,7 @@ header{
 }
 
 .bonus {
-
-}
-
-.card {
-    padding: 10px;
+    float: right;
 }
 
 .cash{
@@ -153,6 +149,10 @@ header{
     flex-direction: column;
     padding-top: 20px;
     height: auto;
+}
+
+h2{
+    padding: 5px 0;
 }
 
 .transfer{

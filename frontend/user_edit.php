@@ -37,29 +37,42 @@ if (!isset($_SESSION["login"])) {
             <option value="EN">En</option>
         </select>
     </header>
+
     <div class="main">
         <div class="main-box">
             <div class="box">
-                <h3 class="box-title">Личный профиль</h3>
-                <ul class="user-info">
-                    <li class="row">
-                        <div class="info"><strong>Фамилия</strong></div>
-                        <div class="user-name"><?=$_SESSION["user_lname"]?></div>
-                    </li>
+            <form action="../backend/profile_edit_process.php" method="post">
+                    <h3 class="box-title">Изменеие профиля</h3>
+                    <ul class="user-info">
                     <li class="row">
                         <div class="info"><strong>Имя</strong></div>
-                        <div class="user-number"><?=$_SESSION["user_name"]?></div>
+                        <div class="user-number">
+                            <input class="edit-form-item2" type="text" name="first_name" placeholder="Введите имя" required>
+                        </div>
+                    </li>
+                    <li class="row">
+                        <div class="info"><strong>Фамилия</strong></div>
+                        <div class="user-name">
+                            <input class="edit-form-item3" type="text" name="last_name" placeholder="Введите фамилию" required>
+                        </div>
                     </li>
                     <li class="row">
                         <div class="info"><strong>Логин</strong></div>
-                        <div class="user-number"><?=$_SESSION["email"]?></div>
+                        <div class="user-number">
+                            <input class="edit-form-item30" type="email" name="email" placeholder="Введите логин" required>
+                        </div>
                     </li>
                     <li class="row">
                         <div class="info"><strong>Пароль</strong></div>
-                        <div class="user-number"><?=$_SESSION["password"]?></div>
+                        <div class="user-number">
+                            <input class="edit-form-item4" type="password" name="password" placeholder="Введите пароль" required>
+                        </div>
                     </li>
                 </ul>
-                <button class="info-edit"><a href="./user_edit.php">Изменить</a></button>
+                <button class="info-edit" type="edit" name="edit">
+                    Изменить
+                </button>
+            </form>
             </div>
         </div>
     </div>
